@@ -1,19 +1,49 @@
-# node-todo-cicd
+# AWS ECS Docker CI/CD Project
 
-Run these commands:
+## Project Overview
+This project demonstrates deployment of a containerized application using AWS services like ECS, ECR, and CloudWatch.
 
+## Tech Stack
+- AWS ECS (Elastic Container Service)
+- AWS ECR (Elastic Container Registry)
+- Docker
+- Git and GitHub
+- AWS CloudWatch (Monitoring)
 
-`sudo apt install nodejs`
+## Architecture
+User → Load Balancer → ECS Service → Docker Container → Logs in CloudWatch
 
+## Workflow
+1. Code pushed to GitHub  
+2. Docker image built  
+3. Image pushed to ECR  
+4. ECS pulls image and deploys container  
+5. Logs monitored in CloudWatch  
 
-`sudo apt install npm`
+## Screenshots
 
+### ECS Service
+![ECS](screenshots/ecs.png)
 
-`npm install`
+### ECR Repository
+![ECR](screenshots/ecr.png)
 
-`node app.js`
+### CloudWatch Logs
+![Logs](screenshots/cloudwatch.png)
 
-or Run by docker compose
+## Features
+- Containerized deployment  
+- Scalable architecture using ECS  
+- Centralized logging with CloudWatch  
 
-test
+## Learnings
+- Hands-on experience with Docker and AWS  
+- Understanding of container orchestration  
+- Monitoring using CloudWatch  
 
+## Base Application
+This project uses a Node.js application originally created by:
+https://github.com/LondheShubham153/node-todo-cicd
+
+## Author
+Sapna Kumari
