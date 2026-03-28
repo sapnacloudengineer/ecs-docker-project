@@ -1,24 +1,29 @@
-# AWS ECS Docker CI/CD Project
+# AWS ECS Docker Deployment Project
 
 ## Project Overview
-This project demonstrates deployment of a containerized application using AWS services like ECS, ECR, and CloudWatch.
+This project demonstrates the deployment of a containerized Node.js application using AWS services like ECS, ECR, EC2, and CloudWatch.
 
 ## Tech Stack
+- AWS EC2 (Virtual Server for setup and SSH access)
 - AWS ECS (Elastic Container Service)
 - AWS ECR (Elastic Container Registry)
 - Docker
 - Git and GitHub
 - AWS CloudWatch (Monitoring)
+- Node.js (Application - Frontend and Backend)
 
 ## Architecture
-User → Load Balancer → ECS Service → Docker Container → Logs in CloudWatch
+User → EC2 (SSH Access) → ECS Service → Docker Container → Logs in CloudWatch
 
 ## Workflow
-1. Code pushed to GitHub  
-2. Docker image built  
-3. Image pushed to ECR  
-4. ECS pulls image and deploys container  
-5. Logs monitored in CloudWatch  
+1. Connected to EC2 instance using SSH  
+2. Installed Docker and configured AWS CLI  
+3. Cloned the application repository from GitHub  
+4. Built Docker image of the Node.js application  
+5. Pushed Docker image to AWS ECR  
+6. Created ECS cluster and service to run the container  
+7. ECS pulled the image from ECR and deployed the container  
+8. Logs monitored using AWS CloudWatch  
 
 ## Screenshots
 
@@ -32,14 +37,16 @@ User → Load Balancer → ECS Service → Docker Container → Logs in CloudWat
 ![Logs](screenshots/cloudwatch.png)
 
 ## Features
-- Containerized deployment  
-- Scalable architecture using ECS  
+- Containerized deployment using Docker  
+- Managed container orchestration using ECS  
 - Centralized logging with CloudWatch  
+- Secure remote access using EC2 and SSH  
 
 ## Learnings
-- Hands-on experience with Docker and AWS  
-- Understanding of container orchestration  
-- Monitoring using CloudWatch  
+- Hands-on experience with Docker and AWS services  
+- Understanding of container deployment using ECS  
+- Image management using ECR  
+- Monitoring and debugging using CloudWatch  
 
 ## Base Application
 This project uses a Node.js application for both frontend and backend, originally created by:
