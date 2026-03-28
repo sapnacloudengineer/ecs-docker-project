@@ -42,8 +42,14 @@ User → Load Balancer → ECS Service → Docker Container → Logs in CloudWat
 - Monitoring using CloudWatch  
 
 ## Base Application
-This project uses a Node.js application originally created by:
+This project uses a Node.js application for both frontend and backend, originally created by:
 https://github.com/LondheShubham153/node-todo-cicd
+
+I have used this application as a base and implemented:
+- Docker containerization  
+- Image management using ECR  
+- Deployment using ECS  
+- Monitoring using CloudWatch  
 
 ## Author
 Sapna Kumari
